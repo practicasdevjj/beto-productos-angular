@@ -8,9 +8,9 @@ Practica para desarrollar una aplicación tipo shoppingcar o tienda de productos
 
 - Crear sección para ver productos y agregarlos al shoppingcar
 - Hacer un pedido
+- Registro
 
 ## vistas administrador
 
-- dar de alta usuarios
-- dar de alta productos
+- Dar de alta productos
 - ver pedidos
