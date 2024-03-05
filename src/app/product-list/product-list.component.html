@@ -1,3 +1,5 @@
+<a routerLink="/carrito" class="carrito">Carrito {{total}}</a>
+
 <div class="container">
     <h1 class="store-name">Shopping Car</h1>
 
@@ -7,7 +9,7 @@
             <h3>Celular</h3>
             <p>Iphon 15 Pro</p>
             <p>Precio: $18,000</p>
-            <button>Agregar al Carrito</button>
+            <button (click)="addToCart(1)">Agregar al Carrito</button>
         </div>
     </div>
 
@@ -17,7 +19,7 @@
             <h3>pantalla</h3>
             <p>samsung</p>
             <p>Precio: $30,000</p>
-            <button>Agregar al Carrito</button> 
+            <button (click)="addToCart(1)">Agregar al Carrito</button> 
         </div>
     </div>
 </div>
