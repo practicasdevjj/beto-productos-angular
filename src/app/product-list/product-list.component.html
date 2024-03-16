@@ -1,25 +1,27 @@
-<a routerLink="/carrito" class="carrito">Carrito {{total}}</a>
+<a routerLink="/carrito" class="carrito"
+  >Carrito {{ selectedProducts.length }}</a
+>
 
 <div class="container">
-    <h1 class="store-name">Shopping Car</h1>
+  <h1 class="store-name">Shopping Car</h1>
 
-    <div class="product">
-        <img src="assets\MPU63.jpeg" alt="Producto 1">
-        <div class="product-info">
-            <h3>Celular</h3>
-            <p>Iphon 15 Pro</p>
-            <p>Precio: $18,000</p>
-            <button (click)="addToCart(1)">Agregar al Carrito</button>
-        </div>
-    </div>
+  @for (producto of productList; track $index) {
 
-    <div class="product">
-        <img src="assets\1010916.webp" alt="Producto 2">
-        <div class="product-info">
-            <h3>pantalla</h3>
-            <p>samsung</p>
-            <p>Precio: $30,000</p>
-            <button (click)="addToCart(1)">Agregar al Carrito</button> 
-        </div>
+  <div class="product">
+    <img [src]="producto.imagen" alt="Producto 1" />
+    <div class="product-info">
+      <h3>{{ producto.title }}</h3>
+      <p>{{ producto.marca }}</p>
+      <p>Precio: $ {{ producto.precio }}</p>
+      <button (click)="addToCart(producto)">Agregar al Carrito</button>
+      <button (click)="removeFromCaty(producto)" style="background-color: red">
+        Remover
+      </button>
     </div>
+  </div>
+
+
+  }
 </div>
+
+

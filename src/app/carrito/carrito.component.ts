@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CartService } from '../cart.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -17,4 +16,15 @@ export class CarritoComponent {
   //     renderCart();
   // }
 
+  deletecart(){
+
+  }
+
+  delete(){
+
+  }
+
+  pago(){
+
+  }
 }
