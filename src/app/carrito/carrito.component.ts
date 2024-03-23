@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
+import { ShoppingcarService } from '../services/shoppingcar.service';
 @Component({
   selector: 'app-carrito',
   standalone:true,
@@ -16,12 +16,13 @@ export class CarritoComponent {
   //     renderCart();
   // }
 
+  constructor(private cartService: ShoppingcarService) {}
   deletecart(){
-
+    this.cartService.deletecart();
   }
 
   delete(){
-
+    this.cartService.delete(1);
   }
 
   pago(){

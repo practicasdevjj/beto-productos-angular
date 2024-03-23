@@ -31,9 +31,11 @@ import { ShoppingcarService } from '../services/shoppingcar.service';
     removeFromCaty(product: Producto): void {
       // FIX: Corregir solo debe quitar un elemento del carrito
       // no todos los que tengan el mismo título
-      this.selectedProducts = this.selectedProducts.filter(
-        (actual) => actual.title != product.title
-      );
-      console.log(this.selectedProducts);
+      // this.selectedProducts = this.selectedProducts.filter(
+      //   (actual) => actual.title != product.title
+      // );
+      this.cartService.delete(product.id);
+      
+      // console.log(this.selectedProducts);
     }
 }

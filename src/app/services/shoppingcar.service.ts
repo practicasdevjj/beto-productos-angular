@@ -15,12 +15,14 @@ export class ShoppingcarService {
         marca: 'Iphone 15 pro',
         precio: 18000,
         imagen: 'assets/MPU63.jpeg',
+        id: 1,
       },
       {
         title: 'Pantalla',
         marca: 'Samsung',
         precio: 30000,
         imagen: 'assets/1010916.webp',
+        id: 2,
       },
   ];
   return productList
@@ -41,8 +43,6 @@ export class ShoppingcarService {
       localStorage.setItem('id', mycartext);
       
       console.log (car);
-
-
     //       //guarda el producto
     // const mycartext = JSON.stringify(myvar);
     // localStorage.setItem('id',mycartext)
@@ -52,8 +52,36 @@ export class ShoppingcarService {
 
     // console.log("guardando",mycarobjet);
   }
-//opbetener el producto al que se le da clic
 
+  deletecart(){
+    let mycartext = "[]";
+    localStorage.setItem('id', mycartext);
+  }
 
+  delete (id: number){
+    let mycart = localStorage.getItem('id');
+    let cart: Producto[];
+    
+    if (mycart) {
+        cart = JSON.parse(mycart);
+    }
+//--------------------------- 
+let lastIndex = -1;
+    for (let i = cart!.length - 1; i >= 0; i--) {
+        if (cart![i].id === id) {
+            lastIndex = i;
+            break;
+        }
+    }
+    cart!.splice(lastIndex, 1);
+    const mycartext = JSON.stringify(cart!);
+    localStorage.setItem('id', mycartext);
 
+  //   const updatedCart = cart!.filter(item => item.id !== id);
+
+  //   localStorage.setItem('id', JSON.stringify(updatedCart));
+    
+  //   console.log(`El artículo con ID ${id} ha sido eliminado del carrito.`);
+  // }
+}
 }
