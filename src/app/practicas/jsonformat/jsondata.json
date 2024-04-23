@@ -1,0 +1,23 @@
+
+[
+    {
+    "nombre":"pancho",
+    "apellidos":"lopez",
+    "edad": 23,
+    "fechadenacimient": {
+        "day": 12,
+        "month": 12,
+        "year": 2000
+    }
+    },
+    {
+        "nombre":"pancho",
+        "apellidos":"lopez",
+        "edad": 23,
+        "fechadenacimient": {
+            "day": 12,
+            "month": 12,
+            "year": 2000
+        }
+        },
+]

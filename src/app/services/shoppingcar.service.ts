@@ -30,6 +30,40 @@ export class ShoppingcarService {
     return productList;
   }
 
+  getFromStorage() {
+    return { '1': 10, '2': 20 };
+  }
+
+  getSelectedProducts(): Producto[] {
+    // primer consultar lo que esta guardado en local storage
+
+    const seleccion = this.getFromStorage();
+    const productsList = this.getproduct();
+    const ids = Object.keys(seleccion); // [100]
+
+    const prducts = ids.map(
+      (id) => productsList.find((produto) => `${produto.id}` == `${id}`)!
+    );
+
+    // recorre todos los productos uno por uno
+    // con la funcion que se pasas verfica si se tiene que agregar en la lista
+    // la fncion checa que el producto que se esta procesando tenga un id que este en la lista de ids
+
+    const productsFilter = productsList.filter((product) =>
+      ids.includes(`${product.id}`)
+    );
+
+    const sotarage: any = { '1': 1, '2': 0 };
+
+    const productids: string[] = Object.keys(sotarage).filter(
+      (id) => sotarage[id] > 0
+    ); // ["1"]
+
+    [];
+
+    return productsFilter;
+  }
+
   //TODO: implementar método para guardar en localstorage del navegador
 
   saveStorage(mycar: Producto[]) {
@@ -40,12 +74,12 @@ export class ShoppingcarService {
     // [  ] Remplazar codigo con esta funcion
   }
 
-  getFromStorage(): Producto[] {
-    //TODO:
-    // [  ]  recupearar el texto de localstorage
-    // [  ]  Convertir el texto en objeto completo
-    // [  ]  Remplazar donde corresponda
-  }
+  // getFromStorage(): Producto[] {
+  //   //TODO:
+  //   // [  ]  recupearar el texto de localstorage
+  //   // [  ]  Convertir el texto en objeto completo
+  //   // [  ]  Remplazar donde corresponda
+  // }
 
   addproduct(myvar: Producto) {
     let mycar = localStorage.getItem('id');

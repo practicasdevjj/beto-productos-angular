@@ -1,0 +1,13 @@
+<h1>Formulario de Producto</h1>
+<form [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre del Producto</mat-label>
+    <input matInput formControlName="name" (input)="onChange()" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Marca</mat-label>
+    <input matInput formControlName="marca" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saving()">Guardar</button>
+</form>
