@@ -3,33 +3,18 @@
 
 <div class="carrito">
     <h1 class="Title">Tu carrito</h1>
-
-    <div class="product">
-        <img src="assets\MPU63.jpeg" alt="Producto 1">
-        <div class="product-info">
-            <h3>Celular</h3>
-            <p>Iphone 15 Pro</p>
-            <p>Precio: $18,000</p>
-            <button (click)="delete()">Quitar del carrito</button>
-        </div>
+</div>
+    <div *ngFor="let product of productlist" class="product">
+        
+            <div class="contproduct">{{product.total}}</div>
+            <div>{{ product.title }}</div>
+            <div>{{ product.marca }}</div>
+            <div>{{ product.precio }}</div>
+            <img [src]="product.imagen" alt="{{ product.title }}">
     </div>
-    <div class="product">
-        <img src="assets\MPU63.jpeg" alt="Producto 1">
-        <div class="product-info">
-            <h3>Celular</h3>
-            <p>Iphone 15 Pro</p>
-            <p>Precio: $18,000</p>
-            <button (click)="delete()">Quitar del carrito</button>
-        </div>
-</div>
-
-<div>
-    <button (click)="deletecart()">Eliminar lista de compras</button>
-</div>
 
 <div class="pago">
-
+    <button (click)="deleteall()">Eliminar lista de compras</button>
     <button (click)="pago()">Proceder al pago</button>
-    
 </div>
 

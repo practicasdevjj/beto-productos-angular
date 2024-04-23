@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Producto } from '../Model/product';
 import { ShoppingcarService } from '../services/shoppingcar.service';
+import { ProductoService } from '../services/product.service';
 
   @Component({
       selector: 'app-product-list',
@@ -16,9 +17,9 @@ import { ShoppingcarService } from '../services/shoppingcar.service';
     selectedProducts: Producto[] = [];
     productList: Producto[] = [ ];
 
-  constructor(private cartService: ShoppingcarService) {}
+  constructor(private cartService: ShoppingcarService,private producto: ProductoService) {}
     ngOnInit(): void {
-      this.productList=this.cartService.getproduct()
+      this.productList=this.producto.getproduct()
     }
 
   addToCart(product: Producto): void {
