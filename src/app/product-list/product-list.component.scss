@@ -41,13 +41,16 @@
     width: 150px;
     height: auto;
     margin-right: 20px;
+    object-fit: cover;
 }
 .product-info {
     flex: 1;
 }
 .carrito {
-    display: block;
-    border: #ca3a16 1px solid;
+    position: fixed;//fija el elemento en la pantalla 
+    z-index: 99;
+    top: 8px;
+    right: 15px;
     text-align: right;
-    margin-right: 50px;
+    
 }

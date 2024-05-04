@@ -1,0 +1,14 @@
+@for (producto of listaproductos; track $index) {
+
+    <div class="product">
+        <img [src]="producto.imagen" alt="Producto 1" />
+        <div class="product-info">
+          <h3>{{ producto.title }}</h3>
+          <p>{{ producto.marca }}</p>
+          <p>Precio: $ {{ producto.precio }}</p>
+          <button  (click)="remove(producto.id)" style="background-color: red">
+            Remover
+          </button>
+        </div>
+      </div>
+}

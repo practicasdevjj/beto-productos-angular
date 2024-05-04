@@ -46,20 +46,11 @@ export class ShoppingcarService {
   saveStorage(mycar: any) {
     const mycarText = JSON.stringify(mycar);
     localStorage.setItem(this.shoppingCartKey, mycarText);
-    //TODO:
-    // [  ]  pasar la lista de productos como argumento de este método.
-    // [  ]  Convertir la lista de productos en texto
-    // [  ]  Guardar en localStorate
-    // [  ] Remplazar codigo con esta funcion
   }
 
   getFromStorage(): any {
     const mycarText = localStorage.getItem(this.shoppingCartKey);
     return mycarText ? JSON.parse(mycarText) : {};
-    //TODO:
-    // [  ]  recupearar el texto de localstorage
-    // [  ]  Convertir el texto en objeto completo
-    // [  ]  Remplazar donde corresponda
   }
 
   getlist(): ProductoCarrito[] {
