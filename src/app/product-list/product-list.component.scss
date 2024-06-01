@@ -1,17 +1,17 @@
 :host {
     display: block;
-    background-color: #7f8ac7;
+    background-color: #c6c7cf;
     min-height: 100vh;
     button {
         border: 1px solid  #ffffff;
-        background: #2bb246;
+        background: #dee5df;
         padding: 10px;
         border-radius: 5px;
         cursor: pointer;
         transition: all 1s;
         &:hover {
             font-style: italic;
-            background-color: #ca3a16;
+            background-color: #16ca16;
         }
     }
 }
@@ -29,9 +29,9 @@
     margin-bottom: 20px;
 }
 .product {
-    background-color: #08648b;
+    background-color: #c5d592;
     display: flex;
-    border: 1px solid #ca3a16;
+    border: 1px solid #000000;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;

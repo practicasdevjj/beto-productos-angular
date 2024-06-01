@@ -49,5 +49,9 @@ export class CarritoComponent implements OnInit{
     console.log('descargando lista');
     return this.cartService.getlist();
   }
+  removeFromCaty(product: Producto): void {
+    this.cartService.delete(product.id);
+    this.productlist = this.cartService.getlist();
+  }
 
 }

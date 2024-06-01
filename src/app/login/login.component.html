@@ -1,0 +1,19 @@
+
+
+<div class="border"> 
+    <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput formControlName="Usuario">
+            <mat-error>Usuario invalido</mat-error>
+          </mat-form-field>    
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="Password">
+            <mat-error>password incorrecto</mat-error>
+          </mat-form-field>  
+
+          <button (click)="submit()" [disabled]="form.invalid" mat-raised-button color="primary">Ingresar</button>
+    </form>
+</div>

@@ -1,14 +1,23 @@
-@for (producto of listaproductos; track $index) {
+<a class="inicio-btn" routerLink="/productos">Inicio</a>
 
-    <div class="product">
-        <img [src]="producto.imagen" alt="Producto 1" />
-        <div class="product-info">
-          <h3>{{ producto.title }}</h3>
-          <p>{{ producto.marca }}</p>
-          <p>Precio: $ {{ producto.precio }}</p>
-          <button  (click)="remove(producto.id)" style="background-color: red">
-            Remover
-          </button>
-        </div>
-      </div>
-}
+<div class="container">
+  <div class="store-name">Administracion de productos</div>
+  
+  <div *ngFor="let producto of listaproductos; let i = index; trackBy: trackByFn" class="product">
+    <img [src]="producto.imagen" alt="{{ producto.title }}" />
+    <div class="product-info">
+      <h3>{{ producto.title }}</h3>
+      <p>{{ producto.marca }}</p>
+      <p><strong>${{ producto.precio }}</strong></p>
+      <button (click)="remove(producto.id)" class="carrito">
+        Remover
+      </button>
+      &nbsp;
+      <button (click)="Actualizar(producto.id)" class="carrito" style="background-color: rgb(255, 153, 0); border-color: rgb(255, 153, 0);">
+        Actualizar
+      </button>
+    </div>
+  </div>
+</div>
+
+<button class="logout-btn" (click)="logout()">Exit</button>

@@ -11,6 +11,9 @@
             <div>{{ product.marca }}</div>
             <div>{{ product.precio }}</div>
             <img [src]="product.imagen" alt="{{ product.title }}">
+            <button (click)="removeFromCaty(product)" style="background-color: red">
+                Remover
+              </button>
     </div>
 
 <div class="pago">

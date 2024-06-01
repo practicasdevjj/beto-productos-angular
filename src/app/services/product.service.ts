@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Producto, ProductoCarrito } from '../Model/product';
+import { Producto, ProductoCarrito, ProductoInput } from '../Model/product';
+import { Data } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -48,5 +49,29 @@ export class ProductoService {
     let listanueva = listproduct.filter(product => product.id !== id);
     //guardar la lista actualizada 
     this.saveStorage(listanueva);
+  }
+  findproduct(id: number):Producto|undefined {
+    const listproduct = this.getFromStorage();
+    //let productoform1 = listproduct.filter(product => product.id == id);
+    let productoform = listproduct.find(product => product.id == id);
+    return productoform;
+  }
+
+  actualizar(id: number, producto: ProductoInput){
+    //buscar el producto
+    const ProductoActualizado = this.findproduct(id)
+    if(!ProductoActualizado) {
+      return
+    }
+    ProductoActualizado.descripcion = producto.descripcion
+    ProductoActualizado.imagen = producto.imagen
+    ProductoActualizado.marca = producto.marca
+    ProductoActualizado.precio = producto.precio
+    ProductoActualizado.title = producto.title
+    //actualizar los datos agregados
+    this.removeproduct(id)
+    //const productoactualizado
+    //eliminarlo |  subirlo
+    this.addproducto(ProductoActualizado)
   }
 }

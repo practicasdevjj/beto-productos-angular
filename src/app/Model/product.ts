@@ -20,3 +20,10 @@ export interface Producto {
   //   total: number;
   // }
   
+  export interface ProductoInput {
+    title: string;
+    marca: string;
+    precio: number;
+    descripcion?: string;
+    imagen: string;
+  }
