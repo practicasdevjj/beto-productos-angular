@@ -1,0 +1,60 @@
+<form [formGroup]="form">
+  <!-- <h1>Formulario de Usuario</h1>
+  
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Apellido(s)</mat-label>
+    <input matInput>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Tipo de Usuario</mat-label>
+    <mat-select>
+      <mat-option value="cliente">Cliente</mat-option>
+      <mat-option value="vendedor">Vendedor</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+  <h2>Detalles del Producto</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre del Producto</mat-label>
+    <input matInput formControlName="title">
+    <mat-error>titulo requerido</mat-error>
+  </mat-form-field> 
+  
+  <mat-form-field>
+    <mat-label>Marca del Producto</mat-label>
+    <input matInput formControlName="marca">
+    <mat-error>Marca requerido</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Costo del Producto</mat-label>
+    <input matInput formControlName="precio" type="number" min="0">
+    <mat-error>Precio requerido</mat-error>
+  </mat-form-field>
+
+  <h2>Descripcion e imagen del Producto</h2>
+
+  <mat-form-field>
+    <mat-label>Descripción del Producto</mat-label>
+    <textarea matInput formControlName="descripcion" cols="5"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Imagen</mat-label>
+    <input matInput formControlName="imagen">
+    <mat-error>imagen requerido</mat-error>
+  </mat-form-field> 
+
+  <h3>Todos los campos con (*) son necesarios</h3>
+
+  @if (form.invalid && form.dirty) {<h4>Hay datos invalidos</h4>}
+  
+  <button (click)="submit()" [disabled]="form.invalid" mat-raised-button color="primary">Guardar</button>
+</form>
