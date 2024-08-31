@@ -45,6 +45,7 @@ export class ShoppingcarService {
     // [  ]  recupearar el texto de localstorage
     // [  ]  Convertir el texto en objeto completo
     // [  ]  Remplazar donde corresponda
+    return [];
   }
 
   addproduct(myvar: Producto) {

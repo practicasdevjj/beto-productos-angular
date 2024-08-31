@@ -1,0 +1,27 @@
+<div style="margin-top: 120px">
+  <mat-form-field appearance="outline">
+    <mat-label>Test</mat-label>
+    <input matInput #miinput id="miinputid" />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Test Controlador</mat-label>
+    <input matInput [formControl]="micontrolador" />
+  </mat-form-field>
+  <br />
+
+  Fecha de tu cumpleños <br />
+  <app-input-customized (whenValueChanges)="changingCustomizedValue($event)">
+  </app-input-customized>
+  <br />
+  fecha del cumpleaños de tu mamá
+  <br />
+  <app-input-customized
+    (whenValueChanges)="changingCustomizedValue($event)"
+    [formControl]="micontrolador"
+  >
+  </app-input-customized>
+
+  <button (click)="enviar()">Enviando</button>
+  <button (click)="enviarControlador()">Enviando Controlador</button>
+  <button (click)="enviarTag()">Enviando Tag</button>
+</div>
